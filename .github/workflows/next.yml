@@ -41,8 +41,8 @@ jobs:
             - name: Build
               run: pnpm build
 
-            - name: Enter beta mode
-              run: pnpm beta
+            - name: Enter Next mode
+              run: pnpm next
 
             - name: Create Release Pull Request or Publish to npm
               id: changesets

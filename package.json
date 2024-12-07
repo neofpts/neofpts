@@ -3,12 +3,16 @@
 	"type": "module",
 	"packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"apps/*"
 	],
 	"scripts": {
+    "web:build": "pnpm --filter ./apps/web run build",
+    "web:dev": "pnpm --filter ./apps/web run dev",
+    "web:preview": "pnpm --filter ./apps/web/ run preview",
 		"build": "pnpm --recursive --parallel run build",
 		"release": "changeset publish",
-		"beta": "changeset pre enter next",
+		"next": "changeset pre enter next",
 		"version": "changeset version",
 		"lint": "prettier --check . && eslint .",
 		"lint:fix": "eslint . --fix",
@@ -18,7 +22,7 @@
 		"test": "pnpm run test:unit -- --run"
 	},
 	"lint-staged": {
-		"*.{ts,tsx,js,jsx}": [
+		"*.{ts,tsx,js,jsx,svelte}": [
 			"prettier --write",
 			"eslint --fix"
 		]

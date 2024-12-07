@@ -7,7 +7,6 @@
 		"declaration": true, // Emit .d.ts files for type definitions
 		"declarationMap": true, // Emit maps for declaration files
 		"emitDeclarationOnly": false, // Emit JS files alongside declarations
-		"outDir": "./dist", // Output directory for compiled files
 		"sourceMap": true, // Generate source maps
 		"strict": true, // Enable all strict type-checking options
 		"esModuleInterop": true, // For compatibility with CommonJS/ESM modules
@@ -30,7 +29,12 @@
 
 		// Enable incremental builds (useful for large projects)
 		"incremental": true,
-		"tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+
+		// Paths
+		"paths": {
+			"@neofpts/core": ["./packages/core/dist/index.js"],
+			"@neofpts/data": ["./packages/data/dist/index.js"]
+		}
 	},
 	"exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"] // Exclude unnecessary files
 }

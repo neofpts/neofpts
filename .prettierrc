@@ -1,17 +1,27 @@
 {
 	"useTabs": true,
 	"singleQuote": false,
-	"trailingComma": "all",
+	"trailingComma": "some",
 	"printWidth": 80,
 	"tabWidth": 4,
 	"semi": true,
 	"importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
-	"plugins": ["@ianvs/prettier-plugin-sort-imports"],
+	"plugins": [
+		"prettier-plugin-svelte",
+		"@ianvs/prettier-plugin-sort-imports",
+		"prettier-plugin-tailwindcss"
+	],
 	"overrides": [
 		{
 			"files": "*.ts",
 			"options": {
 				"parser": "typescript"
+			}
+		},
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
 			}
 		}
 	]
