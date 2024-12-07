@@ -7,9 +7,9 @@
 		"apps/*"
 	],
 	"scripts": {
-    "web:build": "pnpm --filter ./apps/web run build",
-    "web:dev": "pnpm --filter ./apps/web run dev",
-    "web:preview": "pnpm --filter ./apps/web/ run preview",
+		"web:build": "pnpm --filter ./apps/web run build",
+		"web:dev": "pnpm --filter ./apps/web run dev",
+		"web:preview": "pnpm --filter ./apps/web/ run preview",
 		"build": "pnpm --recursive --parallel run build",
 		"release": "changeset publish",
 		"next": "changeset pre enter next",

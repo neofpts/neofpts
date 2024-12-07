@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { i18n } from "$lib/i18n";
 	import { ParaglideJS } from "@inlang/paraglide-sveltekit";
-	import '../app.css';
+	import { i18n } from "$lib/i18n";
+	import "../app.css";
+
 	let { children } = $props();
 </script>
 

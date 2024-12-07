@@ -13,12 +13,12 @@ export default tseslint.config(
 			parser: tseslint.parser,
 			parserOptions: {
 				ecmaVersion: 2021,
-				sourceType: "module",
+				sourceType: "module"
 			},
-			globals: globals.node, // Add Node.js globals
-		},
+			globals: globals.node // Add Node.js globals
+		}
 	},
 	{
-		ignores: ["dist/", "node_modules/"],
-	},
+		ignores: ["dist/", "node_modules/"]
+	}
 );

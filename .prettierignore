@@ -3,5 +3,7 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
-node_modules
 dist
+node_modules
+.content-collections
+.svelte-kit
