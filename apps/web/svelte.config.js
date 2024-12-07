@@ -14,7 +14,8 @@ const config = {
 		adapter: adapter(),
 
 		alias: {
-			"content-collections": "./.content-collections/generated"
+			"content-collections": "./.content-collections/generated",
+			"@/*": "./src/lib/*"
 		}
 	}
 };
