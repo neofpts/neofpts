@@ -1,52 +1,29 @@
 {
-  "name": "@neofpts/core",
-  "version": "0.0.1",
-  "description": "",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist",
-    "package.json"
-  ],
-  "scripts": {
-    "dev:watch": "tsx watch src/index.ts",
-    "dev": "tsx src/index.ts",
-    "build:dist": "tsc -p ./tsconfig.json",
-    "build": "pnpm run build:dist",
-    "release": "changeset publish",
-    "beta": "changeset pre enter next",
-    "version": "changeset version",
-    "lint": "prettier --check . && eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "test:watch": "vitest --watch",
-    "test:unit": "vitest",
-    "test": "pnpm run test:unit -- --run"
-  },
-	"lint-staged": {
-		"*.{ts,tsx,js,jsx}": ["prettier --write", "eslint --fix"]
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build": "pnpm --recursive --parallel run build",
+		"release": "changeset publish",
+		"beta": "changeset pre enter next",
+		"version": "changeset version",
+		"lint": "prettier --check . && eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"test:watch": "vitest --watch",
+		"test:unit": "vitest",
+		"test": "pnpm run test:unit -- --run"
 	},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/neofpts/core.git"
-  },
-  "bugs": {
-    "url": "https://github.com/neofpts/core/issues"
-  },
-  "homepage": "https://github.com/neofpts/core#README",
-  "keywords": [],
-  "author": "MrGeniusProgrammer <mrgeniusprogrammer69@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx}": [
+			"prettier --write",
+			"eslint --fix"
+		]
+	},
+	"devDependencies": {
 		"@changesets/cli": "^2.27.10",
 		"@eslint/js": "^9.16.0",
 		"@ianvs/prettier-plugin-sort-imports": "^4.4.0",
@@ -61,6 +38,5 @@
 		"typescript": "^5.7.2",
 		"typescript-eslint": "^8.17.0",
 		"vitest": "^2.1.8"
-  },
-  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
+	}
 }

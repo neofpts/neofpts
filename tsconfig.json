@@ -1,38 +1,36 @@
 {
-  "compilerOptions": {
-    // Core Options
-    "target": "ES2020",                     // Modern target; adjust based on audience
-    "module": "ESNext",                    // For ESM support
-    "moduleResolution": "Node",            // Node module resolution strategy
-    "declaration": true,                   // Emit .d.ts files for type definitions
-    "declarationMap": true,                // Emit maps for declaration files
-    "emitDeclarationOnly": false,          // Emit JS files alongside declarations
-    "outDir": "./dist",                    // Output directory for compiled files
-    "sourceMap": true,                     // Generate source maps
-    "strict": true,                        // Enable all strict type-checking options
-    "esModuleInterop": true,               // For compatibility with CommonJS/ESM modules
-    "forceConsistentCasingInFileNames": true, // Ensure consistent casing in imports
-    "resolveJsonModule": true,             // Allow importing .json files
-    "skipLibCheck": true,                  // Skip type checking of declaration files
-    "allowSyntheticDefaultImports": true, // Allow default imports from modules without them
-    "importHelpers": true,                // Reduce output size by using tslib helpers
+	"compilerOptions": {
+		// Core Options
+		"target": "ES2020", // Modern target; adjust based on audience
+		"module": "ESNext", // For ESM support
+		"moduleResolution": "Node", // Node module resolution strategy
+		"declaration": true, // Emit .d.ts files for type definitions
+		"declarationMap": true, // Emit maps for declaration files
+		"emitDeclarationOnly": false, // Emit JS files alongside declarations
+		"outDir": "./dist", // Output directory for compiled files
+		"sourceMap": true, // Generate source maps
+		"strict": true, // Enable all strict type-checking options
+		"esModuleInterop": true, // For compatibility with CommonJS/ESM modules
+		"forceConsistentCasingInFileNames": true, // Ensure consistent casing in imports
+		"resolveJsonModule": true, // Allow importing .json files
+		"skipLibCheck": true, // Skip type checking of declaration files
+		"allowSyntheticDefaultImports": true, // Allow default imports from modules without them
+		"importHelpers": true, // Reduce output size by using tslib helpers
 
-    // ESM & CommonJS Compatibility
-    "allowJs": false,                      // Disable JavaScript file compilation
-    "rootDir": "./src",                    // Root folder for source files
+		// ESM & CommonJS Compatibility
+		"allowJs": false, // Disable JavaScript file compilation
 
-    // Additional TypeScript Features
-    "typeRoots": ["./node_modules/@types"], // Path for type declarations
-    "noEmitOnError": true,                 // Prevent emitting on type errors
-    "useDefineForClassFields": true,       // Use modern class field definitions
+		// Additional TypeScript Features
+		"typeRoots": ["./node_modules/@types"], // Path for type declarations
+		"noEmitOnError": true, // Prevent emitting on type errors
+		"useDefineForClassFields": true, // Use modern class field definitions
 
-    // Target Compatibility
-    "lib": ["ES2020", "DOM"],              // Include modern JavaScript and DOM APIs
+		// Target Compatibility
+		"lib": ["ES2020", "DOM"], // Include modern JavaScript and DOM APIs
 
-    // Enable incremental builds (useful for large projects)
-    "incremental": true,
-    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
-  },
-  "include": ["src"],                     // Include source files
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"] // Exclude unnecessary files
+		// Enable incremental builds (useful for large projects)
+		"incremental": true,
+		"tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+	},
+	"exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"] // Exclude unnecessary files
 }

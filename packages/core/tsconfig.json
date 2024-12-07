@@ -1,0 +1,8 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"outDir": "./dist", // Output directory for compiled files
+		"tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+	},
+	"include": ["src"]
+}

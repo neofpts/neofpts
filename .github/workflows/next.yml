@@ -1,13 +1,13 @@
-name: Beta
+name: Next
 
 on:
     push:
         branches:
-            - beta
+            - next
 
 jobs:
-    beta:
-        name: Beta
+    next:
+        name: Next
         runs-on: ubuntu-latest
         permissions:
             contents: write # to create release (changesets/action)

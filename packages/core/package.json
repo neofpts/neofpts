@@ -1,0 +1,57 @@
+{
+	"name": "@neofpts/core",
+	"version": "0.0.1",
+	"description": "",
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"package.json"
+	],
+	"publishConfig": {
+		"access": "public",
+		"directory": "dist"
+	},
+	"scripts": {
+		"dev:watch": "tsx watch src/index.ts",
+		"dev": "tsx src/index.ts",
+		"build:dist": "tsc -p ./tsconfig.json",
+		"build": "pnpm run build:dist",
+		"release": "changeset publish",
+		"beta": "changeset pre enter next",
+		"version": "changeset version",
+		"lint": "prettier --check . && eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"test:watch": "vitest --watch",
+		"test:unit": "vitest",
+		"test": "pnpm run test:unit -- --run"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx}": [
+			"prettier --write",
+			"eslint --fix"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/neofpts/neofpts.git",
+		"directory": "packages/core"
+	},
+	"bugs": {
+		"url": "https://github.com/neofpts/neofpts/issues"
+	},
+	"homepage": "https://github.com/neofpts/neofpts#README",
+	"keywords": [],
+	"author": "MrGeniusProgrammer <mrgeniusprogrammer69@gmail.com>",
+	"license": "MIT"
+}
