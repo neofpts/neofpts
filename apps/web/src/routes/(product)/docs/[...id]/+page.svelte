@@ -13,7 +13,10 @@
 	{@html data.html}
 	<div class="mt-12 flex flex-col gap-4">
 		<div class="flex items-center justify-between">
-			<a href={`/docs/${data.id}.md`} class="flex items-center gap-0.5">
+			<a
+				href={`https://github.com/neofpts/neofpts/tree/main/apps/web/src/content/docs/${data.id}.md`}
+				class="flex items-center gap-0.5"
+			>
 				<Edit class="size-5" />
 				<span>Edit this page</span>
 			</a>
