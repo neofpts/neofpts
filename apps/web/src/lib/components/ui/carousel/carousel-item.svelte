@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { cn } from "@/utils.js";
 	import type { WithElementRef } from "bits-ui";
 	import type { HTMLAttributes } from "svelte/elements";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "@/utils.js";
 
 	let {
 		ref = $bindable(null),

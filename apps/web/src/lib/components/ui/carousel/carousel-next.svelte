@@ -1,9 +1,9 @@
 <script lang="ts">
-	import ArrowRight from "lucide-svelte/icons/arrow-right";
-	import type { WithoutChildren } from "bits-ui";
-	import { getEmblaContext } from "./context.js";
-	import { cn } from "@/utils.js";
 	import { Button, type Props } from "@/components/ui/button/index.js";
+	import { cn } from "@/utils.js";
+	import type { WithoutChildren } from "bits-ui";
+	import ArrowRight from "lucide-svelte/icons/arrow-right";
+	import { getEmblaContext } from "./context.js";
 
 	let {
 		ref = $bindable(null),

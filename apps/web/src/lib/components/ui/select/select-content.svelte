@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { cn } from "@/utils.js";
 	import { Select as SelectPrimitive, type WithoutChild } from "bits-ui";
 	import * as Select from "./index.js";
-	import { cn } from "@/utils.js";
 
 	let {
 		ref = $bindable(null),

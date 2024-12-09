@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
 	import { cn } from "@/utils.js";
+	import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
 
 	let {
 		ref = $bindable(null),
@@ -9,4 +9,8 @@
 	}: RangeCalendarPrimitive.GridRowProps = $props();
 </script>
 
-<RangeCalendarPrimitive.GridRow bind:ref class={cn("flex", className)} {...restProps} />
+<RangeCalendarPrimitive.GridRow
+	bind:ref
+	class={cn("flex", className)}
+	{...restProps}
+/>

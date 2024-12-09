@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { cn } from "@/utils.js";
 	import { PinInput as InputOTPPrimitive } from "bits-ui";
 	import type { ComponentProps } from "svelte";
-	import { cn } from "@/utils.js";
 
 	let {
 		ref = $bindable(null),
@@ -23,8 +23,12 @@
 >
 	{cell.char}
 	{#if cell.hasFakeCaret}
-		<div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-			<div class="animate-caret-blink bg-foreground h-4 w-px duration-1000"></div>
+		<div
+			class="pointer-events-none absolute inset-0 flex items-center justify-center"
+		>
+			<div
+				class="animate-caret-blink bg-foreground h-4 w-px duration-1000"
+			></div>
 		</div>
 	{/if}
 </InputOTPPrimitive.Cell>

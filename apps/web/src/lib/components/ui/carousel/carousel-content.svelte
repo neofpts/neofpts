@@ -1,9 +1,9 @@
 <script lang="ts">
-	import emblaCarouselSvelte from "embla-carousel-svelte";
+	import { cn } from "@/utils.js";
 	import type { WithElementRef } from "bits-ui";
+	import emblaCarouselSvelte from "embla-carousel-svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "@/utils.js";
 
 	let {
 		ref = $bindable(null),
@@ -23,9 +23,9 @@
 			container: "[data-embla-container]",
 			slides: "[data-embla-slide]",
 			...emblaCtx.options,
-			axis: emblaCtx.orientation === "horizontal" ? "x" : "y",
+			axis: emblaCtx.orientation === "horizontal" ? "x" : "y"
 		},
-		plugins: emblaCtx.plugins,
+		plugins: emblaCtx.plugins
 	}}
 	on:emblaInit={emblaCtx.onInit}
 >

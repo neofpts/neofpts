@@ -1,17 +1,19 @@
+import type { WithElementRef } from "bits-ui";
 import type { EmblaCarouselSvelteType } from "embla-carousel-svelte";
 import type emblaCarouselSvelte from "embla-carousel-svelte";
 import { getContext, hasContext, setContext } from "svelte";
-import type { WithElementRef } from "bits-ui";
 import type { HTMLAttributes } from "svelte/elements";
 
 export type CarouselAPI =
-	NonNullable<NonNullable<EmblaCarouselSvelteType["$$_attributes"]>["on:emblaInit"]> extends (
-		evt: CustomEvent<infer CarouselAPI>
-	) => void
+	NonNullable<
+		NonNullable<EmblaCarouselSvelteType["$$_attributes"]>["on:emblaInit"]
+	> extends (evt: CustomEvent<infer CarouselAPI>) => void
 		? CarouselAPI
 		: never;
 
-type EmblaCarouselConfig = NonNullable<Parameters<typeof emblaCarouselSvelte>[1]>;
+type EmblaCarouselConfig = NonNullable<
+	Parameters<typeof emblaCarouselSvelte>[1]
+>;
 
 export type CarouselOptions = EmblaCarouselConfig["options"];
 export type CarouselPlugins = EmblaCarouselConfig["plugins"];
@@ -50,7 +52,11 @@ export function setEmblaContext(config: EmblaContext): EmblaContext {
 
 export function getEmblaContext(name = "This component") {
 	if (!hasContext(EMBLA_CAROUSEL_CONTEXT)) {
-		throw new Error(`${name} must be used within a <Carousel.Root> component`);
+		throw new Error(
+			`${name} must be used within a <Carousel.Root> component`
+		);
 	}
-	return getContext<ReturnType<typeof setEmblaContext>>(EMBLA_CAROUSEL_CONTEXT);
+	return getContext<ReturnType<typeof setEmblaContext>>(
+		EMBLA_CAROUSEL_CONTEXT
+	);
 }

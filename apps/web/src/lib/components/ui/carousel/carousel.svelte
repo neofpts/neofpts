@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { cn } from "@/utils.js";
 	import {
+		setEmblaContext,
 		type CarouselAPI,
 		type CarouselProps,
-		type EmblaContext,
-		setEmblaContext,
+		type EmblaContext
 	} from "./context.js";
-	import { cn } from "@/utils.js";
 
 	let {
 		opts = {},
@@ -30,7 +30,7 @@
 		onInit,
 		scrollSnaps: [],
 		selectedIndex: 0,
-		scrollTo,
+		scrollTo
 	});
 
 	setEmblaContext(carouselState);
@@ -87,6 +87,11 @@
 	});
 </script>
 
-<div class={cn("relative", className)} role="region" aria-roledescription="carousel" {...restProps}>
+<div
+	class={cn("relative", className)}
+	role="region"
+	aria-roledescription="carousel"
+	{...restProps}
+>
 	{@render children?.()}
 </div>

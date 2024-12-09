@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { cn } from "@/utils.js";
 	import { Menubar as MenubarPrimitive, type WithoutChild } from "bits-ui";
 	import Circle from "lucide-svelte/icons/circle";
-	import { cn } from "@/utils.js";
 
 	let {
 		ref = $bindable(null),
