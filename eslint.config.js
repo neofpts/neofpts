@@ -1,16 +1,46 @@
-import eslint from "@eslint/js";
+import { fileURLToPath } from "node:url";
+import { includeIgnoreFile } from "@eslint/compat";
+import js from "@eslint/js";
 import prettier from "eslint-config-prettier";
+import svelte from "eslint-plugin-svelte";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import ts from "typescript-eslint";
 
-export default tseslint.config(
-	eslint.configs.recommended,
-	...tseslint.configs.recommended,
+const gitignorePath = fileURLToPath(new URL("./.gitignore", import.meta.url));
+
+export default ts.config(
+	includeIgnoreFile(gitignorePath),
+	js.configs.recommended,
+	...ts.configs.recommended,
+	...svelte.configs["flat/recommended"],
 	prettier,
+	...svelte.configs["flat/prettier"],
+
+	{
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.node
+			}
+		}
+	},
+
+	{
+		files: ["**/*.svelte"],
+		languageOptions: {
+			parserOptions: {
+				parser: ts.parser
+			}
+		},
+		rules: {
+			"svelte/no-at-html-tags": "off"
+		}
+	},
+
 	{
 		files: ["**/*.ts"],
 		languageOptions: {
-			parser: tseslint.parser,
+			parser: ts.parser,
 			parserOptions: {
 				ecmaVersion: 2021,
 				sourceType: "module"
@@ -18,7 +48,22 @@ export default tseslint.config(
 			globals: globals.node // Add Node.js globals
 		}
 	},
+
+	// Ignore Patterns
 	{
-		ignores: ["dist/", "node_modules/"]
+		ignores: [
+			"**/dist/**",
+			"**/.output/**",
+			"**/.vercel/**",
+			"**/.netlify/**",
+			"**/.wrangler/**",
+			"**/.svelte-kit/**",
+			"**/build/**",
+			"**/.DS_Store/**",
+			"**/Thumbs.db/**",
+			"**/.env/**",
+			"**/.env.*/**",
+			"**/node_modules/**"
+		]
 	}
 );

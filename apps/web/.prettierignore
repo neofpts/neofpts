@@ -3,7 +3,31 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
-dist
-node_modules
-.content-collections
+# Output
+.output
+.vercel
+.netlify
+.wrangler
 .svelte-kit
+build
+dist
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Paraglide
+src/lib/paraglide
+
+# Content Collections
+.content-collections

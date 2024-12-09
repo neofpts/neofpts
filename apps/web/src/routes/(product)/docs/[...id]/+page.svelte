@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { Toc } from "@/components/toc";
 	import { Button } from "@/components/ui/button";
 	import { ChevronLeft, ChevronRight, Edit } from "lucide-svelte";
 	import type { PageData } from "./$types";
-	import Toc from "./toc.svelte";
 
 	let { data }: { data: PageData } = $props();
 </script>

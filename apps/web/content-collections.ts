@@ -107,6 +107,28 @@ const docs = defineCollection({
 	}
 });
 
+const legal = defineCollection({
+	name: "legal",
+	directory: "src/content/legal",
+	include: "**/*.md",
+	schema: (z) => ({
+		updated: z.string()
+	}),
+	transform: async (document, context) => {
+		// Compile the current document
+		const compiledMarkdown = await compileMarkdown(context, document);
+
+		return {
+			id: document._meta.path,
+			metadata: {
+				...document._meta
+			},
+			html: compiledMarkdown.html,
+			toc: compiledMarkdown.toc
+		};
+	}
+});
+
 export default defineConfig({
-	collections: [docs]
+	collections: [docs, legal]
 });

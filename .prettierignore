@@ -3,7 +3,12 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
+build
 dist
-node_modules
-.content-collections
-.svelte-kit
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+

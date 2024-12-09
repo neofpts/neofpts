@@ -18,37 +18,6 @@
 				class="flex min-w-56 flex-1 flex-row flex-wrap justify-between lg:justify-evenly"
 			>
 				<div>
-					<h4 class="mb-4 text-sm font-semibold">Product</h4>
-					<ul class="space-y-2">
-						<li>
-							<a
-								href="/#features"
-								class="text-muted-foreground hover:text-foreground text-sm"
-								>Features</a
-							>
-						</li>
-						<li>
-							<a
-								href="/#faq"
-								class="text-muted-foreground hover:text-foreground text-sm"
-								>FAQ</a
-							>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h4 class="mb-4 text-sm font-semibold">Company</h4>
-					<ul class="space-y-2">
-						<li>
-							<a
-								href="/about"
-								class="text-muted-foreground hover:text-foreground text-sm"
-								>About Us</a
-							>
-						</li>
-					</ul>
-				</div>
-				<div>
 					<h4 class="mb-4 text-sm font-semibold">Legal</h4>
 					<ul class="space-y-2">
 						<li>
@@ -73,10 +42,13 @@
 			class="border-muted-foreground/20 mt-12 flex flex-col items-center justify-between border-t pt-8 md:flex-row"
 		>
 			<p class="text-muted-foreground text-sm">
-				&copy; {new Date().getFullYear()} SveltekitSaaS. All rights reserved.
+				&copy; {new Date().getFullYear()} Neofpts. All rights reserved.
 			</p>
 			<div class="mt-4 flex space-x-4 md:mt-0">
-				<a href="#" class="text-muted-foreground hover:text-foreground">
+				<a
+					href="https://github.com/neofpts/neofpts"
+					class="text-muted-foreground hover:text-foreground"
+				>
 					<SiGithub size={24} />
 					<span class="sr-only">Github</span>
 				</a>
