@@ -68,7 +68,26 @@ const docs = defineCollection({
 		description: z.string()
 	}),
 	transform: async (document, context) => {
+		// Compile the current document
 		const compiledMarkdown = await compileMarkdown(context, document);
+
+		// Get all documents in the collection
+		const allDocs = await context.collection.documents();
+
+		// Sort documents by `_meta.path` or another criteria
+		const sortedDocs = allDocs.sort((a, b) =>
+			a._meta.path.localeCompare(b._meta.path)
+		);
+
+		// Find the index of the current document
+		const currentIndex = sortedDocs.findIndex(
+			(doc) => doc._meta.path === document._meta.path
+		);
+
+		// Determine the next and previous documents
+		const nextDoc = sortedDocs[currentIndex + 1];
+		const prevDoc = sortedDocs[currentIndex - 1];
+
 		return {
 			id: document._meta.path,
 			metadata: {
@@ -77,7 +96,13 @@ const docs = defineCollection({
 				...document._meta
 			},
 			html: compiledMarkdown.html,
-			toc: compiledMarkdown.toc
+			toc: compiledMarkdown.toc,
+			nextDoc: nextDoc
+				? { id: nextDoc._meta.path, title: nextDoc.title }
+				: null,
+			prevDoc: prevDoc
+				? { id: prevDoc._meta.path, title: prevDoc.title }
+				: null
 		};
 	}
 });

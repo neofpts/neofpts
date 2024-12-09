@@ -3,9 +3,7 @@
 	import {
 		CommandDialog,
 		CommandEmpty,
-		CommandGroup,
 		CommandInput,
-		CommandItem,
 		CommandLinkItem,
 		CommandList
 	} from "@/components/ui/command";
@@ -63,13 +61,8 @@
 	/>
 	<CommandList>
 		{#each searchResult as item (item.id)}
-			<CommandLinkItem
-				href={`/docs/${item.id}`}
-				class="flex cursor-pointer flex-col items-start"
-			>
-				<h3 class="font-bold leading-tight">
-					{item.title}
-				</h3>
+			<CommandLinkItem href={`/docs/${item.id}`} class="cursor-pointer">
+				{item.title}
 			</CommandLinkItem>
 		{:else}
 			<CommandEmpty>No results found.</CommandEmpty>

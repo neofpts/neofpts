@@ -15,7 +15,7 @@
 	import { BookOpen, LibraryBig, TerminalSquare } from "lucide-svelte";
 	import type { Snippet } from "svelte";
 	import Header from "./header.svelte";
-	import Item from "./item.svelte";
+	import SidebarItem from "./sidebar-item.svelte";
 
 	let { children }: { children: Snippet } = $props();
 
@@ -73,7 +73,7 @@
 							<SidebarGroup>
 								<SidebarMenu>
 									{#each pageTree as item (item.id)}
-										<Item {item} />
+										<SidebarItem {item} />
 									{/each}
 								</SidebarMenu>
 							</SidebarGroup>

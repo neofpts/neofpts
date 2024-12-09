@@ -12,7 +12,7 @@
 	} from "@/components/ui/sidebar";
 	import type { PageTreeItem } from "@/helpers/doc";
 	import { ChevronRight } from "lucide-svelte";
-	import Self from "./item.svelte";
+	import Self from "./sidebar-item.svelte";
 
 	let { item }: { item: PageTreeItem } = $props();
 </script>
