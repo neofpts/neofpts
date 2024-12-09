@@ -15,7 +15,6 @@ const config = {
 
 		alias: {
 			"content-collections": "./.content-collections/generated",
-			"content-search": "./.content-search",
 			"@/*": "./src/lib/*"
 		}
 	}
